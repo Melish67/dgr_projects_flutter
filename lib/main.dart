@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         title: Text('Dgr'),
         centerTitle: false,
       ),
-      body: ModalView(),
+      body: LoginScreen(),
     ));
   }
 }

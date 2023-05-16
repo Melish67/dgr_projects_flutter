@@ -1,3 +1,4 @@
+import 'package:dgrprojects/pages/modal.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../const_design/design.dart';
@@ -66,7 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       _buildPasswordTF(),
                       _buildForgotPasswordBtn(),
                       _buildRememberMeCheckbox(),
-                      _buildLoginBtn(),
+                      _buildLoginBtn(context),
                       _buildSignupBtn(),
                     ],
                   ),
@@ -188,13 +189,18 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Widget _buildLoginBtn() {
+  Widget _buildLoginBtn(BuildContext context) {
     String istapped = '';
     return Container(
       padding: EdgeInsets.symmetric(vertical: 25.0),
       width: double.infinity,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) =>  ModalView()),
+          );
+        },
         style: ElevatedButton.styleFrom(
           primary:  Color(0xFFffffff),
           onPrimary:  Color(0xFF398AE5),
