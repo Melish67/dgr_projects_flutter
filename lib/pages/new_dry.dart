@@ -1,32 +1,42 @@
+/*
 import 'package:flutter/material.dart';
 import '../const_design/design.dart';
 import 'package:dgrprojects/pages/modal.dart';
 import 'package:dgrprojects/pages/information.dart';
 import 'package:dgrprojects/main.dart';
-class DryIceChecklist extends StatefulWidget {
+class DryChecklist extends StatefulWidget {
+  static String basliq = 'Checklist';
+
   @override
-  _DryIceChecklistState createState() => _DryIceChecklistState();
+  State<DryChecklist> createState() => _DryChecklistState();
 }
-class _DryIceChecklistState extends State<DryIceChecklist> {
-  double _currentSliderValue = 20;
+
+class _DryChecklistState extends State<DryChecklist> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: DryChecklist.basliq,
+      theme: ThemeData(
+         */
+/* backgroundColor: Colors.blue[300], //appbar rengle
+          scaffoldBackgroundColor: Colors.blue[300] //body rengle*//*
+
+      ),
       home: Scaffold(
         appBar:  AppBar(
-            backgroundColor: Color(0xFF398AE5),
-            centerTitle: false,
-            title: Text('Dgr'),
-            leading: IconButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) =>  ModalView()),
-                );
-              },
-              icon: Icon(Icons.arrow_back),
-            ),
+          backgroundColor: Color(0xFF398AE5),
+          centerTitle: false,
+          title: Text(DryChecklist.basliq),
+          leading: IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) =>  ModalView()),
+              );
+            },
+            icon: Icon(Icons.arrow_back),
+          ),
           actions: [
             _buildDialog(context),
             //list if widget in appbar actions
@@ -53,17 +63,17 @@ class _DryIceChecklistState extends State<DryIceChecklist> {
                 PopupMenuItem<int>(
                   value: 1,
                   child: Row(
-                children: [
-                Icon(
-                Icons.settings,
-                  color: Colors.blue,
-                ),
-                const SizedBox(
-                  width: 7,
-                ),
-                Text("Settings",style: TextStyle(color: Colors.blue),)
-              ],
-            ),
+                    children: [
+                      Icon(
+                        Icons.settings,
+                        color: Colors.blue,
+                      ),
+                      const SizedBox(
+                        width: 7,
+                      ),
+                      Text("Settings",style: TextStyle(color: Colors.blue),)
+                    ],
+                  ),
                 ),
                 PopupMenuItem<int>(
                     value: 2,
@@ -81,13 +91,13 @@ class _DryIceChecklistState extends State<DryIceChecklist> {
                     )),
               ],
               onSelected: (item) => {print(item),
-              Navigator.of(context).pushAndRemoveUntil(
-              MaterialPageRoute(builder: (context) => MyApp()),
-              (route) => false),
+                Navigator.of(context).pushAndRemoveUntil(
+                    MaterialPageRoute(builder: (context) => MyApp()),
+                        (route) => false),
               },
             ),
           ],
-          ),
+        ),
         body: SafeArea(
           child: SingleChildScrollView(
             child: Column(
@@ -129,12 +139,12 @@ class _DryIceChecklistState extends State<DryIceChecklist> {
                         ],
                       ),
                       SizedBox(height: 20.0),
-                     _buildInfo(context),
+                      _buildInfo(context),
                     ],
                   ),
                 ),
               ],
-            ),
+            ),// common column
           ),
         ),
       ),
@@ -142,13 +152,8 @@ class _DryIceChecklistState extends State<DryIceChecklist> {
   }
 }
 
-/*Navigator.push(
-context,
-MaterialPageRoute(builder: (context) =>  ModalView()),
-);*/
-
-
-
+*/
+/*top input*//*
 
 Widget _buildClassDivision() {
   return Column(
@@ -156,8 +161,8 @@ Widget _buildClassDivision() {
     children: <Widget>[
       Container(
         alignment: Alignment.centerLeft,
-       
-  decoration: kLightBlueBoxDecorationStyle,
+        */
+/*  decoration: kLightBlueBoxDecorationStyle,*//*
 
         height: 45.0,
         child: TextFormField(
@@ -200,7 +205,8 @@ Widget _buildAirwaybilNo() {
     children: <Widget>[
       Container(
         alignment: Alignment.centerLeft,
-    decoration: kLightBlueBoxDecorationStyle,
+        */
+/*  decoration: kLightBlueBoxDecorationStyle,*//*
 
         height: 45.0,
         child: TextFormField(
@@ -237,7 +243,9 @@ Widget _buildOrign() {
     children: <Widget>[
       Container(
         alignment: Alignment.centerLeft,
-    decoration: kLightBlueBoxDecorationStyle,
+        */
+/*  decoration: kLightBlueBoxDecorationStyle,*//*
+
         height: 45.0,
         child: TextFormField(
           decoration: InputDecoration(
@@ -273,7 +281,8 @@ Widget _buildDest() {
     children: <Widget>[
       Container(
         alignment: Alignment.centerLeft,
-    decoration: kLightBlueBoxDecorationStyle,
+        */
+/*  decoration: kLightBlueBoxDecorationStyle,*//*
 
         height: 45.0,
         child: TextFormField(
@@ -310,7 +319,8 @@ Widget _buildCao() {
     children: <Widget>[
       Container(
         alignment: Alignment.centerLeft,
-       decoration: kLightBlueBoxDecorationStyle,
+        */
+/*  decoration: kLightBlueBoxDecorationStyle,*//*
 
         height: 45.0,
         child: TextFormField(
@@ -347,7 +357,8 @@ Widget _buildGroup() {
     children: <Widget>[
       Container(
         alignment: Alignment.centerLeft,
-       decoration: kLightBlueBoxDecorationStyle,
+        */
+/*  decoration: kLightBlueBoxDecorationStyle,*//*
 
         height: 45.0,
         child: TextFormField(
@@ -379,73 +390,69 @@ Widget _buildGroup() {
   );
 }
 
+class SliderMain extends StatefulWidget {
+  @override
+  State<SliderMain> createState() => _SliderMainState();
+}
 
+class _SliderMainState extends State<SliderMain> {
+  double _sliderBaslangicDeyeri = 10;
+  double _sliderBaslangicDeyeri2 = 20;
 
-
-Widget  _buildInfo(context){
- double _currentSliderValue = 20;
-  double _currentSliderPrimaryValue = 0.2;
-
-  double _currentSliderSecondaryValue = 0.5;
-
-  var details;
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: <Widget>[
-      Container(
-        child: Container(
-          margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
-          alignment: Alignment.centerLeft,
-          decoration: kLightYellowBoxDecorationStyle,
-          height: 400,
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Flexible(
+          flex: 1,
           child: Column(
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.fromLTRB(8, 25, 0, 15),
-                child: Text('Quantity and Type of Packing' ,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.red,
-                    fontSize: 24,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+             */
+/* Text(
+                'Komputerin donmasi problemi var?',
+                style: TextStyle(
+                  color: Colors.red[500],
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),*//*
 
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 5, 0, 0),
+                child: Text(
+                  '$_sliderBaslangicDeyeri.round()',
+                  style: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(8,10, 8, 0),
-                child: Text('Two copies in English and in the IATA format including the air certification statement. This question maybe indicated as not applicable only way the Shipper’s Declaration Data is submitted electronically.' ,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 18,
-                  ),),
+              Slider(
+                value: _sliderBaslangicDeyeri,
+                min: 0,
+                max: 100,
+                divisions: 5,
+                label: _sliderBaslangicDeyeri.round().toString(),
+                onChanged: (double value) {
+                  setState(() {
+                    _sliderBaslangicDeyeri = value;
+                  });
+                },
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(8, 15, 8, 0),
-                child:TextButton(
-                    style: TextButton.styleFrom( textStyle: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.grey),backgroundColor: Colors.blue,padding: EdgeInsets.fromLTRB(10, 2, 10, 2)),
-                    child: Text('10.01.05',style: TextStyle(color: Colors.white),),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) =>  InfoPage()),
-                      );
-                    }),
-
-              ),
-              SliderMain(),
             ],
-
           ),
         ),
-      ),
 
-    ],
-  );
+      ],
+    );
+  }
 }
 
-void setState(Null Function() param0) {
-}
+
+
 
 Widget _buildDialog(BuildContext context) {
   return TextButton(
@@ -489,34 +496,173 @@ Widget _buildDialog(BuildContext context) {
 
 
 
+Widget  _buildInfo(context){
+  */
+/* double _currentSliderValue = 20;
+  double _currentSliderPrimaryValue = 0.2;*//*
 
-class SliderMain extends StatefulWidget {
-  @override
-  State<SliderMain> createState() => _SliderMainState();
+  double _currentSliderSecondaryValue = 0.5;
+
+  var details;
+  return Container(
+    padding: EdgeInsets.fromLTRB(0, 20, 0, 15),
+    margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
+    alignment: Alignment.centerLeft,
+    decoration: kLightYellowBoxDecorationStyle,
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        PageViewExample(),
+
+        SliderMain(),
+      ],
+    ),
+  );
 }
 
-class _SliderMainState extends State<SliderMain> {
-  double _currentSliderValue = 20;
+
+*/
+/*
+class CarouselSlider extends StatefulWidget {
+  const CarouselSlider({Key? key}) : super(key: key);
 
   @override
+  State<CarouselSlider> createState() => _CarouselSliderState();
+}
+
+class _CarouselSliderState extends State<CarouselSlider> {
+  @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Slider(
-          value: _currentSliderValue,
-          min: 0,
-          max: 100,
-          divisions: 5,
-          label: _currentSliderValue.round().toString(),
-          onChanged: (double value) {
-            setState(() {
-              _currentSliderValue = value;
-            });
-          },
-        ),
-      ],
+    return Container(
+      child: CarouselSlider(
+        options: CarouselOptions(height: 400.0),
+        items: [1,2,3,4,5].map((i) {
+          return Builder(
+            builder: (BuildContext context) {
+              return Container(
+                  width: MediaQuery.of(context).size.width,
+                  margin: EdgeInsets.symmetric(horizontal: 5.0),
+                  decoration: BoxDecoration(
+                      color: Colors.amber
+                  ),
+                  child: Text('text $i', style: TextStyle(fontSize: 16.0),)
+              );
+            },
+          );
+        }).toList(),
+      ),
     );
   }
 }
+*//*
+
+
+
+class PageViewExample extends StatelessWidget {
+  const PageViewExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final PageController controller = PageController();
+    return Container(
+      child: PageView(
+        /// [PageView.scrollDirection] defaults to [Axis.horizontal].
+        /// Use [Axis.vertical] to scroll vertically.
+        controller: controller,
+        scrollDirection: Axis.horizontal,
+        children: const <Widget>[
+          Center(
+            child: Text('Second Page'),
+          ),
+          Center(
+            child: Text('Second Page'),
+          ),
+          Center(
+            child: Text('Third Page'),
+          ),
+        ],
+      ),
+    );
+  }
+}
+*/
+/*  child:  Container(
+
+            child: Column(
+              children: <Widget>[
+                Container(
+                  child:
+                  Text('Quantity and Type of Packing' ,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.red,
+                      fontSize: 24,
+                    ),
+                  ),),
+                Container(child: Text('Two copies in English and in the IATA format including the air certification statement. This question maybe indicated as not applicable only way the Shipper’s Declaration Data is submitted electronically.' ,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 18,
+                  ),),),
+                Container(child: TextButton(
+                    style: TextButton.styleFrom( textStyle: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.grey),backgroundColor: Colors.blue,padding: EdgeInsets.fromLTRB(10, 2, 10, 2)),
+                    child: Text('10.01.05',style: TextStyle(color: Colors.white),),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) =>  InfoPage()),
+                      );
+                    }),),
+
+
+              ],
+
+            ),
+          ),*//*
+
+*/
+/*
+Widget _buildCarousel() {
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: <Widget>[
+      Container(
+        alignment: Alignment.centerLeft,
+        *//*
+
+*/
+/*  decoration: kLightBlueBoxDecorationStyle,*//*
+*/
+/*
+
+        height: 45.0,
+        child: TextFormField(
+          decoration: InputDecoration(
+            border: new OutlineInputBorder(
+              borderRadius: new BorderRadius.circular(5.0),
+              borderSide: new BorderSide(),
+
+            ),
+            labelText: "Group",
+            hintText: 'Group',
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(5.0),
+              borderSide: BorderSide(
+                color: Colors.blue,
+              ),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(5.0),
+              borderSide: BorderSide(
+                color: Colors.grey,
+                width: 1.0,
+              ),
+            ),
+          ),
+        ),
+      ),
+    ],
+  );
+}*/
 
