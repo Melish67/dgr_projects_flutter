@@ -67,18 +67,17 @@ class _ModalViewState extends State<ModalView> {
                         Row(
                           children: [
                             Flexible(
-                              flex: 8,
                               child: Container(
                                 child: _buildClassDivision(),
                               ),
                             ),
 
-                            Flexible(
+                          /*  Flexible(
                               flex: 2,
                               child: Container(
                                  child: _buildDialog(context),
                               ),
-                            ),
+                            ),*/
                           ],
                         ),
                         SizedBox(height: 10,),
