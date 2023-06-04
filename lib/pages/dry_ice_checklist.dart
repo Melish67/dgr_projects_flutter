@@ -389,58 +389,61 @@ Widget  _buildInfo(context){
   double _currentSliderSecondaryValue = 0.5;
 
   var details;
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: <Widget>[
-      Container(
-        child: Container(
-          margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
-          alignment: Alignment.centerLeft,
-          decoration: kLightYellowBoxDecorationStyle,
-          height: 400,
-          child: Column(
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.fromLTRB(8, 25, 0, 15),
-                child: Text('Quantity and Type of Packing' ,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.red,
-                    fontSize: 24,
+  return Container(
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Container(
+          child: Container(
+            margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
+            alignment: Alignment.centerLeft,
+            decoration: kLightYellowBoxDecorationStyle,
+            height: 400,
+            child: Column(
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(8, 25, 0, 15),
+                  child: Text('Quantity and Type of Packing' ,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.red,
+                      fontSize: 24,
 
+                    ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(8,10, 8, 0),
-                child: Text('Two copies in English and in the IATA format including the air certification statement. This question maybe indicated as not applicable only way the Shipper’s Declaration Data is submitted electronically.' ,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 18,
-                  ),),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(8, 15, 8, 0),
-                child:TextButton(
-                    style: TextButton.styleFrom( textStyle: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.grey),backgroundColor: Colors.blue,padding: EdgeInsets.fromLTRB(10, 2, 10, 2)),
-                    child: Text('10.01.05',style: TextStyle(color: Colors.white),),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) =>  InfoPage()),
-                      );
-                    }),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(8,10, 8, 0),
+                  child: Text('Two copies in English and in the IATA format including the air certification statement. This question maybe indicated as not applicable only way the Shipper’s Declaration Data is submitted electronically.' ,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 18,
+                    ),),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(8, 15, 8, 0),
+                  child:TextButton(
+                      style: TextButton.styleFrom( textStyle: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.grey),backgroundColor: Colors.blue,padding: EdgeInsets.fromLTRB(10, 2, 10, 2)),
+                      child: Text('10.01.05',style: TextStyle(color: Colors.white),),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) =>  InfoPage()),
+                        );
+                      }),
 
-              ),
-              SliderMain(),
-            ],
+                ),
 
+              ],
+
+            ),
           ),
         ),
-      ),
+        SliderMain(),
 
-    ],
+      ],
+    ),
   );
 }
 
